@@ -11,6 +11,7 @@ public class ExampleOne {
         Connection con = DriverManager.getConnection(url, user, password);
         System.out.println("Connection Successful");
         con.setAutoCommit(true);
+        Savepoint sp = con.setSavepoint();
 
         Statement stmt = con.createStatement();
         ResultSet rs1 = stmt.executeQuery("SELECT * FROM users");
