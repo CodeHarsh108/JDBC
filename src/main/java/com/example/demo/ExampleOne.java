@@ -20,5 +20,14 @@ public class ExampleOne {
             System.out.println(id + " : " + name);
         }
 
+        String sql = "SELECT name from actors WHERE nationality = ?";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, "British");
+        ResultSet rs2 = ps.executeQuery();
+        while (rs2.next()){
+            System.out.println(rs2.getString("name"));
+        }
+
+
     }
 }
