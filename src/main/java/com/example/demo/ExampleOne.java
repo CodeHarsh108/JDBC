@@ -10,6 +10,7 @@ public class ExampleOne {
 
         Connection con = DriverManager.getConnection(url, user, password);
         System.out.println("Connection Successful");
+        con.setAutoCommit(true);
 
         Statement stmt = con.createStatement();
         ResultSet rs1 = stmt.executeQuery("SELECT * FROM users");
